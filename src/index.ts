@@ -21,7 +21,7 @@ app.get("/", (_, res) => {
 
 /// Deploys the models to requested ceramic node.
 /// Returns the aliases to the ceramic model.
-app.get("/deploy-models", async (req, res) => {
+app.post("/deploy-models", async (req, res) => {
   await deployModels(req, res);
 });
 
