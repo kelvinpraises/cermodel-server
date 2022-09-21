@@ -1,8 +1,8 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
-import deployModels from "./features/deploy-models";
-import { handleError } from "./utils/middleware";
+import deployModels from "./features/deploy-models/index.js";
+import { handleError } from "./utils/middleware.js";
 
 dotenv.config();
 
