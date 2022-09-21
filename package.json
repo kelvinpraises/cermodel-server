@@ -6,6 +6,7 @@
     "build": "yarn tsc",
     "dev": "concurrently \"yarn tsc --watch\" \"nodemon -q lib/index.js\""
   },
+  "type": "module",
   "dependencies": {
     "@ceramicnetwork/http-client": "^2.0.4",
     "@glazed/devtools": "^0.2.0",
