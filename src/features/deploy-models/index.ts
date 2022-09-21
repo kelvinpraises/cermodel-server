@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { errors, results } from "../../utils/enums";
-import responseHandler from "../../utils/response-handler";
-import deployModels from "./application/core";
+import { errors, results } from "../../utils/enums.js";
+import responseHandler from "../../utils/response-handler.js";
+import deployModels from "./application/core/index.js";
 
 export default async (req: Request, res: Response) => {
   const { didSeed, ceramicNode, modelDetails } =
