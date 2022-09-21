@@ -1,0 +1,71 @@
+Arguments: 
+  /Users/kelvx/.nvm/versions/node/v16.16.0/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js install
+
+PATH: 
+  /Users/kelvx/.nvm/versions/node/v16.16.0/bin:dev/flutter/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/kelvx/.nvm/versions/node/v16.16.0/bin:dev/flutter/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/kelvx/.cargo/bin:/Users/kelvx/dev/flutter/bin:/Users/kelvx/dev/flutter/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.16.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/nodemon: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:141517:19)
+      at Object.onceWrapper (node:events:641:28)
+      at ClientRequest.emit (node:events:527:28)
+      at TLSSocket.emitRequestTimeout (node:_http_client:771:9)
+      at Object.onceWrapper (node:events:641:28)
+      at TLSSocket.emit (node:events:539:35)
+      at TLSSocket.Socket._onTimeout (node:net:516:8)
+      at listOnTimeout (node:internal/timers:559:17)
+      at processTimers (node:internal/timers:502:7)
+
+npm manifest: 
+  {
+    "name": "cermodel-server",
+    "version": "1.0.0",
+    "description": "deploys models to a ceramic node.",
+    "scripts": {
+      "build": "yarn tsc",
+      "dev": "concurrently \"yarn tsc --watch\" \"nodemon -q dist/index.js\""
+    },
+    "dependencies": {
+      "dotenv": "^16.0.1",
+      "express": "^4.18.1",
+      "dids": "^3.1.0",
+      "@ceramicnetwork/http-client": "^2.0.4",
+      "key-did-provider-ed25519": "^2.0.0",
+      "key-did-resolver": "^2.0.4",
+      "uint8arrays": "^3.0.0",
+      "@glazed/devtools": "^0.2.0"
+    },
+    "devDependencies": {
+      "@types/express": "^4.17.13",
+      "@types/node": "^17.0.41",
+      "concurrently": "^7.2.1",
+      "nodemon": "^2.0.16",
+      "typescript": "^4.7.3"
+    },
+    "main": "src/index.ts",
+    "author": "kelvinpraises, Ayocodes",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/kelvinpraises/cermodel-server.git"
+    },
+    "bugs": {
+      "url": "https://github.com/kelvinpraises/cermodel-server/issues"
+    },
+    "homepage": "https://github.com/kelvinpraises/cermodel-server#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
