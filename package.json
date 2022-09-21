@@ -4,7 +4,7 @@
   "description": "deploys models to a ceramic node.",
   "scripts": {
     "build": "yarn tsc",
-    "dev": "concurrently \"yarn tsc --watch\" \"nodemon -q dist/index.js\""
+    "dev": "concurrently \"yarn tsc --watch\" \"nodemon -q lib/index.js\""
   },
   "dependencies": {
     "@ceramicnetwork/http-client": "^2.0.4",
