@@ -31,25 +31,27 @@ const deployModels = async ({
     const manager = new ModelManager({ ceramic });
 
     // Return an array of deployed model aliases
-    const modelArray = modelDetails.map(
-      async ({ schema, name, description, schemaAlias, definitionAlias }) => {
-        // Create the model schema
-        const timelinesSchemaID = await manager.createSchema(
-          schemaAlias,
-          JSON.parse(schema)
-        );
+    const modelArray = await Promise.all(
+      modelDetails.map(
+        async ({ schema, name, description, schemaAlias, definitionAlias }) => {
+          // Create the model schema
+          const timelinesSchemaID = await manager.createSchema(
+            schemaAlias,
+            JSON.parse(schema)
+          );
 
-        // Create the definition using the created schema ID
-        await manager.createDefinition(definitionAlias, {
-          name,
-          description,
-          schema: manager.getSchemaURL(timelinesSchemaID)!,
-        });
+          // Create the definition using the created schema ID
+          await manager.createDefinition(definitionAlias, {
+            name,
+            description,
+            schema: manager.getSchemaURL(timelinesSchemaID)!,
+          });
 
-        // Deploy model to Ceramic node
-        const model = await manager.deploy();
-        return JSON.stringify(model);
-      }
+          // Deploy model to Ceramic node
+          const model = await manager.deploy();
+          return JSON.stringify(model);
+        }
+      )
     );
 
     result = { state: "successful", data: modelArray };
