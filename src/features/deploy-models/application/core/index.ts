@@ -37,7 +37,7 @@ const deployModels = async ({
           // Create the model schema
           const timelinesSchemaID = await manager.createSchema(
             schemaAlias,
-            JSON.parse(schema)
+            JSON.parse(JSON.stringify(schema))
           );
 
           // Create the definition using the created schema ID
