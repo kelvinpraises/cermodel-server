@@ -8,7 +8,7 @@ export default async (req: Request, res: Response) => {
     req.body as IDeployModelRequest;
 
   const result = await deployModels({
-    didSeed,
+    didSeed, 
     ceramicNode,
     modelDetails,
   });
