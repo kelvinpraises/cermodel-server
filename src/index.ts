@@ -7,7 +7,8 @@ import { handleError } from "./utils/middleware.js";
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT;
+
+const PORT = process.env.PORT || 5000;
 
 app.use(cors({ origin: true }));
 
@@ -30,6 +31,6 @@ app.get("/server-stats", (_, res) => {
   res.sendStatus(400);
 });
 
-app.listen(port, () => {
-  console.log(`🔥 [server]: Server is running at https://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`🔥 [server]: Server is running at https://localhost:${PORT}`);
 });
