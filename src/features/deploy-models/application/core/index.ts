@@ -6,13 +6,13 @@ import { getResolver } from "key-did-resolver";
 import { fromString } from "uint8arrays";
 
 const deployModels = async ({
-  didSeed,
+  didSeedKey,
   ceramicNode,
   modelDetails,
 }: IDeployModelRequest) => {
   let result: IDeployModelResult;
   try {
-    const seed = fromString(Buffer.from(didSeed).toString("hex"), "base16");
+    const seed = fromString(Buffer.from(didSeedKey).toString("hex"), "base16");
 
     // Create and authenticate the DID
     const did = new DID({
@@ -28,12 +28,13 @@ const deployModels = async ({
     ceramic.did = did;
 
     // Create a manager for the model
-    const manager = new ModelManager({ ceramic });
 
     // Return an array of deployed model aliases
     const modelArray = await Promise.all(
       modelDetails.map(
         async ({ schema, name, description, schemaAlias, definitionAlias }) => {
+          const manager = new ModelManager({ ceramic });
+
           // Create the model schema
           const timelinesSchemaID = await manager.createSchema(
             schemaAlias,
@@ -49,6 +50,7 @@ const deployModels = async ({
 
           // Deploy model to Ceramic node
           const model = await manager.deploy();
+          console.log(model);
           return JSON.stringify(model);
         }
       )

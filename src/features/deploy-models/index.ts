@@ -4,11 +4,11 @@ import responseHandler from "../../utils/response-handler.js";
 import deployModels from "./application/core/index.js";
 
 export default async (req: Request, res: Response) => {
-  const { didSeed, ceramicNode, modelDetails } =
+  const { didSeedKey, ceramicNode, modelDetails } =
     req.body as IDeployModelRequest;
 
   const result = await deployModels({
-    didSeed, 
+    didSeedKey, 
     ceramicNode,
     modelDetails,
   });

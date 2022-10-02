@@ -1,2 +1,2 @@
-declare const deployModels: ({ didSeed, ceramicNode, modelDetails, }: IDeployModelRequest) => Promise<IDeployModelResult>;
+declare const deployModels: ({ didSeedKey, ceramicNode, modelDetails, }: IDeployModelRequest) => Promise<IDeployModelResult>;
 export default deployModels;

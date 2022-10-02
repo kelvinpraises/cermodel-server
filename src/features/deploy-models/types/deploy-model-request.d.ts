@@ -1,5 +1,5 @@
  interface IDeployModelRequest {
-  didSeed: string;
+  didSeedKey: string;
   ceramicNode: string;
   modelDetails: {
     schema: string;
