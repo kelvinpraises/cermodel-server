@@ -1,6 +1,6 @@
 export const errors = {
   apiVersion: "Incorrect API Version",
-  generic: "Something wen wrong",
+  generic: "Something went wrong",
 };
 
 export const results = {

@@ -51,7 +51,7 @@ const deployModels = async ({
           // Deploy model to Ceramic node
           const model = await manager.deploy();
           console.log(model);
-          return JSON.stringify(model);
+          return model;
         }
       )
     );

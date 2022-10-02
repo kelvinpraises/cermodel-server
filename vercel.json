@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "name": "cermodel-server",
+  "builds": [{ "src": "lib/index.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "lib/index.js" }]
+}

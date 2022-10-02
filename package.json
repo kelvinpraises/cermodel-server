@@ -4,6 +4,7 @@
   "description": "deploys models to a ceramic node.",
   "scripts": {
     "build": "yarn tsc",
+    "start": "node lib/index.js",
     "dev": "concurrently \"yarn tsc --watch\" \"nodemon -q lib/index.js\""
   },
   "type": "module",
